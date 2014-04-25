@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://nasim.blogspot.com/spring-wstest">
+
+    <xs:element name="RandomServiceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Input" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="RandomServiceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Output" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SimpleServiceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Input" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SimpleServiceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Output" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
