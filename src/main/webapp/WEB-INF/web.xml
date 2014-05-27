@@ -5,6 +5,13 @@
 
     <display-name>Archetype Created Web Application</display-name>
 
+    <!--<context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/spring/spring-security.xml
+        </param-value>
+    </context-param>-->
+
     <servlet>
         <servlet-name>spring-wstest</servlet-name>
         <servlet-class>org.springframework.ws.transport.http.MessageDispatcherServlet</servlet-class>
@@ -12,17 +19,17 @@
             <param-name>transformWsdlLocations</param-name>
             <param-value>true</param-value>
         </init-param>
-        <!--<init-param>
+        <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>
                 /WEB-INF/spring-wstest-servlet.xml
             </param-value>
-        </init-param>-->
+        </init-param>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>spring-wstest</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/services/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
