@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="wstest" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="simplePortSoap11" type="wsdl" bindingName="{http://nasim.blogspot.com/spring-wstest}simplePortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/spring-wstest/services/wstest.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/spring-wstest/services/wstest.wsdl"><con:part><con:url>http://localhost:8080/spring-wstest/services/wstest.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://nasim.blogspot.com/spring-wstest" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://nasim.blogspot.com/spring-wstest" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://nasim.blogspot.com/spring-wstest">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://nasim.blogspot.com/spring-wstest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="RandomServiceRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Input" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RandomServiceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Output" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SimpleServiceRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Input" type="xs:integer"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SimpleServiceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Output" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SimpleServiceResponse">
+    <wsdl:part element="tns:SimpleServiceResponse" name="SimpleServiceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SimpleServiceRequest">
+    <wsdl:part element="tns:SimpleServiceRequest" name="SimpleServiceRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RandomServiceRequest">
+    <wsdl:part element="tns:RandomServiceRequest" name="RandomServiceRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="RandomServiceResponse">
+    <wsdl:part element="tns:RandomServiceResponse" name="RandomServiceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="simplePort">
+    <wsdl:operation name="SimpleService">
+      <wsdl:input message="tns:SimpleServiceRequest" name="SimpleServiceRequest"></wsdl:input>
+      <wsdl:output message="tns:SimpleServiceResponse" name="SimpleServiceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RandomService">
+      <wsdl:input message="tns:RandomServiceRequest" name="RandomServiceRequest"></wsdl:input>
+      <wsdl:output message="tns:RandomServiceResponse" name="RandomServiceResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="simplePortSoap11" type="tns:simplePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="SimpleService">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="SimpleServiceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SimpleServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RandomService">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="RandomServiceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="RandomServiceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="simplePortService">
+    <wsdl:port binding="tns:simplePortSoap11" name="simplePortSoap11">
+      <soap:address location="http://localhost:8080/spring-wstest/services/simpleLocation"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/spring-wstest/services/simpleLocation</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="RandomService" bindingOperationName="RandomService" type="Request-Response" outputName="RandomServiceResponse" inputName="RandomServiceRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/spring-wstest/services/simpleLocation</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spr="http://nasim.blogspot.com/spring-wstest">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <spr:RandomServiceRequest>
+         <spr:Input>?</spr:Input>
+      </spr:RandomServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://nasim.blogspot.com/spring-wstest/simplePort/RandomServiceRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="SimpleService" bindingOperationName="SimpleService" type="Request-Response" outputName="SimpleServiceResponse" inputName="SimpleServiceRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/spring-wstest/services/simpleLocation</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spr="http://nasim.blogspot.com/spring-wstest">
+   <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsu:Timestamp wsu:Id="TS-4A6AC01BEFEC35D24014012123868381">
+            <wsu:Created>2014-05-27T17:39:46.720Z</wsu:Created>
+            <wsu:Expires>2014-05-27T17:40:46.720Z</wsu:Expires>
+         </wsu:Timestamp>
+         <wsse:UsernameToken xmlns:wsu="...">
+            <wsse:Username>admin</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">admin!23</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body>
+      <spr:SimpleServiceRequest>
+         <spr:Input>1</spr:Input>
+      </spr:SimpleServiceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://nasim.blogspot.com/spring-wstest/simplePort/SimpleServiceRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
