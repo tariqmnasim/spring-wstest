@@ -88,6 +88,7 @@
 		</dependency>-->
 
         <!-- Java API for XML Parsing Reference Implementation (JAXP-RI) -->
+        <!-- http://mvnrepository.com/artifact/com.sun.xml.parsers/jaxp-ri -->
         <dependency>
             <groupId>com.sun.xml.parsers</groupId>
             <artifactId>jaxp-ri</artifactId>
