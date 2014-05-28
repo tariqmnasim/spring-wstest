@@ -36,12 +36,8 @@
           <element id="library" level="project" name="Maven: xalan:xalan:2.7.1" />
           <element id="library" level="project" name="Maven: xalan:serializer:2.7.1" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:3.2.3.RELEASE" />
-          <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.0" />
-          <element id="library" level="project" name="Maven: javax.xml.bind:jsr173_api:1.0" />
-          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
-          <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-impl:2.0.3" />
-          <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.4.0" />
-          <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: com.sun.xml.parsers:jaxp-ri:1.4.5" />
+          <element id="library" level="project" name="Maven: javax.xml.parsers:jaxp-api:1.4.5" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
         </element>
       </element>
